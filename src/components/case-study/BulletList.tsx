@@ -1,9 +1,9 @@
 export function BulletList({ items }: { items: string[] }) {
   return (
-    <ul className="grid gap-3 sm:grid-cols-2">
+    <ul className="grid gap-x-8 gap-y-4 sm:grid-cols-2">
       {items.map((item) => (
         <li key={item} className="flex gap-3 leading-relaxed text-ink-soft">
-          <span aria-hidden className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+          <span aria-hidden className="mt-2.5 h-1 w-4 shrink-0 bg-accent" />
           {item}
         </li>
       ))}

@@ -303,7 +303,7 @@ export const caseStudies: Record<string, CaseStudy> = {
       stack: ["React", "Stripe"],
       scope: ["Frontend Development", "Backend Development", "Payment Integration"],
     },
-    heroImage: "/images/projects/beafrique-hero.png",
+    heroImage: "/images/projects/beafrique.jpeg",
     context: {
       challenges: [
         "The platform needed to let both local and international customers browse and purchase products through a single online shopping experience.",

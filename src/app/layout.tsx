@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Manrope } from "next/font/google";
+import { Manrope, Fraunces } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { siteConfig } from "@/content/site";
@@ -11,6 +11,15 @@ const manrope = Manrope({
   variable: "--font-manrope",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
+  display: "swap",
+});
+
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
+  subsets: ["latin"],
+  weight: "variable",
+  style: ["normal", "italic"],
+  axes: ["opsz", "SOFT"],
   display: "swap",
 });
 
@@ -42,7 +51,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   const jsonLd = personJsonLd();
 
   return (
-    <html lang="en" className={`${manrope.variable} h-full`}>
+    <html lang="en" className={`${manrope.variable} ${fraunces.variable} h-full`}>
       <body className="flex min-h-full flex-col">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         <Header />

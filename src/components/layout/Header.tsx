@@ -5,13 +5,13 @@ import { MobileNav } from "./MobileNav";
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-50 border-b border-border/60 bg-paper/85 backdrop-blur-md">
-      <Container className="flex h-20 items-center justify-between">
-        <Link href="/" className="text-base font-semibold tracking-tight text-ink">
+    <header className="sticky top-0 z-50 border-b border-border/70 bg-paper/90 backdrop-blur-md">
+      <Container wide className="flex h-20 items-center justify-between md:h-24">
+        <Link href="/" className="font-serif text-lg tracking-tight text-ink">
           {siteConfig.name}
         </Link>
 
-        <nav aria-label="Primary" className="hidden items-center gap-8 md:flex">
+        <nav aria-label="Primary" className="hidden items-center gap-10 md:flex">
           {primaryNav.map((link) => (
             <Link
               key={link.href}
@@ -25,12 +25,15 @@ export function Header() {
 
         <Link
           href="#contact"
-          className="hidden items-center gap-2 rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-paper transition-colors duration-200 hover:bg-accent-deep md:inline-flex"
+          className="group hidden items-center gap-2 text-sm font-medium text-ink transition-colors duration-200 hover:text-accent md:inline-flex"
         >
-          Let&rsquo;s Talk <span aria-hidden>→</span>
+          Let&rsquo;s talk
+          <span aria-hidden className="transition-transform duration-200 group-hover:translate-x-1">
+            →
+          </span>
         </Link>
 
-        <MobileNav links={primaryNav} ctaHref="#contact" ctaLabel="Let's Talk" />
+        <MobileNav links={primaryNav} ctaHref="#contact" ctaLabel="Let's talk" />
       </Container>
     </header>
   );

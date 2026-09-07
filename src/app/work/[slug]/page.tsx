@@ -44,30 +44,33 @@ export default async function ProjectPage({ params }: PageProps<"/work/[slug]">)
     return <CaseStudyPage project={project} caseStudy={caseStudy} />;
   }
 
+  const metaParts = [project.category, project.role];
+  if (!project.year.startsWith("[")) metaParts.splice(1, 0, project.year);
+
   return (
     <section className="py-20 md:py-28">
-      <Container className="max-w-3xl">
-        <Link href="/#work" className="text-sm text-ink-soft transition-colors duration-200 hover:text-ink">
-          ← Back to work
+      <Container wide className="max-w-3xl">
+        <Link
+          href="/#work"
+          className="group inline-flex items-center gap-2 text-sm text-ink-soft transition-colors duration-200 hover:text-ink"
+        >
+          <span aria-hidden className="transition-transform duration-300 group-hover:-translate-x-1">
+            ←
+          </span>
+          Back to work
         </Link>
 
-        <div className="mt-6 flex flex-wrap items-center gap-2 text-xs text-ink-faint">
-          <span>{project.role}</span>
-          <span aria-hidden>·</span>
-          <span>{project.year}</span>
-          <span aria-hidden>·</span>
-          <span>{project.category}</span>
-        </div>
+        <p className="mt-8 text-sm text-ink-faint">{metaParts.join(" · ")}</p>
 
-        <h1 className="mt-4 text-hero font-semibold text-balance text-ink">{project.name}</h1>
+        <h1 className="mt-4 font-serif text-h1 font-medium text-balance text-ink">{project.name}</h1>
         <p className="mt-6 max-w-xl leading-relaxed text-ink-soft">{project.description}</p>
 
-        <div className="mt-16 rounded-2xl border border-dashed border-border p-12 text-center">
-          <p className="text-ink-soft">Full case study — coming soon.</p>
+        <div className="mt-16 border-t border-dashed border-border pt-8">
+          <p className="text-ink-faint">Full case study — coming soon.</p>
         </div>
 
         <div className="mt-10">
-          <LinkButton href="/#work" variant="outline">
+          <LinkButton href="/#work" variant="line">
             Back to work
           </LinkButton>
         </div>

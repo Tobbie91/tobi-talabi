@@ -7,26 +7,26 @@ export function Resources() {
   const publishedResources = resources.filter((resource) => !resource.isPlaceholder);
 
   return (
-    <section aria-labelledby="resources-heading" className="py-20 md:py-28">
-      <Container>
+    <section aria-labelledby="resources-heading" className="border-t border-border py-24 md:py-36">
+      <Container wide>
         <Reveal>
           <SectionHeading id="resources" kicker="Writing" title="Articles, tutorials & resources" />
         </Reveal>
 
         {publishedResources.length === 0 ? (
           <Reveal delay={100}>
-            <div className="mt-12 rounded-2xl border border-dashed border-border p-12 text-center">
-              <p className="text-ink-soft">Writing and resources — coming soon.</p>
-            </div>
+            <p className="mt-12 max-w-md border-t border-dashed border-border pt-8 text-sm text-ink-faint">
+              Writing and resources — coming soon.
+            </p>
           </Reveal>
         ) : (
-          <ul className="mt-12 grid gap-8 md:grid-cols-3">
+          <ul className="mt-16 border-t border-border">
             {publishedResources.map((resource, index) => (
               <Reveal key={resource.slug} delay={index * 80}>
-                <li className="rounded-2xl border border-border p-6">
-                  <p className="text-xs font-medium tracking-wide text-ink-faint uppercase">{resource.category}</p>
-                  <h3 className="mt-3 font-semibold text-ink">{resource.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-ink-soft">{resource.description}</p>
+                <li className="border-b border-border py-8">
+                  <p className="text-meta font-semibold text-ink-faint uppercase">{resource.category}</p>
+                  <h3 className="mt-3 font-serif text-h3 font-medium text-ink">{resource.title}</h3>
+                  <p className="mt-2 max-w-xl leading-relaxed text-ink-soft">{resource.description}</p>
                 </li>
               </Reveal>
             ))}

@@ -11,10 +11,9 @@ export const siteConfig = {
 };
 
 export const primaryNav: NavLink[] = [
-  { label: "About", href: "#about" },
   { label: "Work", href: "#work" },
-  { label: "Speaking & Training", href: "#speaking" },
-  { label: "Testimonials", href: "#testimonials" },
+  { label: "About", href: "#about" },
+  { label: "Speaking", href: "#speaking" },
   { label: "Contact", href: "#contact" },
 ];
 

@@ -3,20 +3,26 @@ import { siteConfig } from "@/content/site";
 
 export function HeroPhoto() {
   return (
-    <div className="relative rounded-[2rem] bg-linear-to-br from-accent-deep via-accent to-accent-bright p-3">
-      <div aria-hidden className="pointer-events-none absolute -top-10 -right-10 h-40 w-40 rounded-full bg-accent-bright/40 blur-3xl" />
-      <div aria-hidden className="pointer-events-none absolute -bottom-12 -left-10 h-48 w-48 rounded-full bg-accent-deep/50 blur-3xl" />
+    <div className="relative">
+      <div aria-hidden className="absolute -top-4 -right-4 bottom-4 left-4 border border-border-strong md:-top-6 md:-right-6 md:bottom-6 md:left-6" />
 
-      <div className="relative aspect-4/5 overflow-hidden rounded-[1.6rem]">
+      <div className="relative aspect-4/5 overflow-hidden bg-paper-alt">
         <Image
           src="/images/hero/headshot.jpeg"
           alt={siteConfig.name}
           fill
           sizes="(min-width: 1024px) 420px, 90vw"
-          className="object-cover"
+          className="object-cover grayscale-[8%]"
           priority
         />
       </div>
+
+      <p
+        aria-hidden
+        className="absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap bg-paper px-4 py-1.5 text-meta font-semibold text-ink-faint uppercase md:left-auto md:right-0 md:translate-x-0"
+      >
+        {siteConfig.name} — {new Date().getFullYear()}
+      </p>
     </div>
   );
 }

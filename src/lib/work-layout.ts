@@ -1,50 +1,25 @@
-import type { Project, WorkLayoutOverride } from "@/content/types";
+import type { Project } from "@/content/types";
 
-const PATTERN: WorkLayoutOverride[] = ["featured", "pair", "pair", "horizontal"];
-
-export interface WorkLayoutItem {
-  project: Project;
-  variant: WorkLayoutOverride;
+export interface WorkTiers {
+  showcase: Project | null;
+  featured: Project[];
+  compact: Project[];
 }
 
-export type WorkLayoutGroup =
-  | { kind: "single"; variant: "featured" | "horizontal"; item: WorkLayoutItem }
-  | { kind: "pair"; items: WorkLayoutItem[] };
-
-function assignWorkLayout(projects: Project[]): WorkLayoutItem[] {
-  return projects.map((project, index) => ({
-    project,
-    variant: project.layoutOverride ?? PATTERN[index % PATTERN.length],
-  }));
-}
+/** How many projects (including the showcase) get large, individual visual treatment. */
+const FEATURED_COUNT = 3;
 
 /**
- * Groups projects into the editorial grid pattern (1 featured -> 2-col pair
- * -> 1 horizontal, repeating) purely from project order/index, so adding or
- * reordering entries in content/projects.ts doesn't require touching the UI.
+ * Splits the curated project order (content/projects.ts) into visual tiers:
+ * the strongest project leads at full size, the next two get a large
+ * side-by-side treatment, and the rest fall into a lighter editorial list —
+ * so adding/reordering projects doesn't require touching the UI.
  */
-export function buildWorkLayoutGroups(projects: Project[]): WorkLayoutGroup[] {
-  const items = assignWorkLayout(projects);
-  const groups: WorkLayoutGroup[] = [];
-  let pairBuffer: WorkLayoutItem[] = [];
-
-  const flushPairs = () => {
-    if (pairBuffer.length > 0) {
-      groups.push({ kind: "pair", items: pairBuffer });
-      pairBuffer = [];
-    }
+export function tierProjects(projects: Project[]): WorkTiers {
+  const [showcase = null, ...rest] = projects;
+  return {
+    showcase,
+    featured: rest.slice(0, FEATURED_COUNT - 1),
+    compact: rest.slice(FEATURED_COUNT - 1),
   };
-
-  for (const item of items) {
-    if (item.variant === "pair") {
-      pairBuffer.push(item);
-      if (pairBuffer.length === 2) flushPairs();
-    } else {
-      flushPairs();
-      groups.push({ kind: "single", variant: item.variant, item });
-    }
-  }
-  flushPairs();
-
-  return groups;
 }

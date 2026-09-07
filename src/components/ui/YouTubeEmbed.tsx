@@ -8,7 +8,7 @@ export function YouTubeEmbed({ videoId, title, className }: { videoId: string; t
 
   if (playing) {
     return (
-      <div className={`relative aspect-video overflow-hidden rounded-3xl border border-border bg-ink ${className ?? ""}`}>
+      <div className={`relative aspect-video overflow-hidden border border-border bg-ink ${className ?? ""}`}>
         <iframe
           src={`https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1`}
           title={title}
@@ -25,7 +25,7 @@ export function YouTubeEmbed({ videoId, title, className }: { videoId: string; t
       type="button"
       onClick={() => setPlaying(true)}
       aria-label={`Play video: ${title}`}
-      className={`group relative block aspect-video w-full overflow-hidden rounded-3xl border border-border ${className ?? ""}`}
+      className={`group relative block aspect-video w-full overflow-hidden border border-border ${className ?? ""}`}
     >
       <Image
         src={`https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`}

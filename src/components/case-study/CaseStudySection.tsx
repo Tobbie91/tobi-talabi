@@ -18,15 +18,19 @@ export function CaseStudySection({
 }) {
   return (
     <section className={cn("border-t border-border py-16 md:py-20", className)}>
-      <Container>
+      <Container wide>
         <Reveal>
-          <p className="text-xs font-semibold tracking-[0.18em] text-accent uppercase">
-            {number} — {kicker}
-          </p>
-          {heading ? (
-            <h2 className="mt-3 max-w-2xl text-h3 font-semibold text-balance text-ink">{heading}</h2>
-          ) : null}
-          {children ? <div className="mt-8">{children}</div> : null}
+          <div className="grid gap-3 md:grid-cols-[10rem_1fr] md:gap-10">
+            <p className="text-meta font-semibold text-ink-faint uppercase">
+              {number} — {kicker}
+            </p>
+            <div>
+              {heading ? (
+                <h2 className="font-serif text-h3 font-medium text-balance text-ink">{heading}</h2>
+              ) : null}
+              {children ? <div className={cn(heading && "mt-8")}>{children}</div> : null}
+            </div>
+          </div>
         </Reveal>
       </Container>
     </section>

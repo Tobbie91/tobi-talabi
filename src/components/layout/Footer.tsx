@@ -7,10 +7,10 @@ export function Footer() {
 
   return (
     <footer className="border-t border-border">
-      <Container className="flex flex-col gap-10 py-16">
+      <Container wide className="flex flex-col gap-10 py-16 md:py-20">
         <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
           <div>
-            <p className="text-base font-semibold tracking-tight text-ink">{siteConfig.name}</p>
+            <p className="font-serif text-xl tracking-tight text-ink">{siteConfig.name}</p>
             <p className="mt-2 max-w-xs text-sm text-ink-soft">{siteConfig.role}</p>
           </div>
 

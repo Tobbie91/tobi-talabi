@@ -2,18 +2,14 @@ import type { EvidenceItem } from "@/content/types";
 
 export function EvidenceGrid({ items }: { items: EvidenceItem[] }) {
   if (items.length === 0) {
-    return (
-      <div className="rounded-2xl border border-dashed border-border p-10 text-center">
-        <p className="text-ink-soft">Evidence & recognition — coming soon.</p>
-      </div>
-    );
+    return <p className="border-t border-dashed border-border pt-8 text-sm text-ink-faint">Evidence & recognition — coming soon.</p>;
   }
 
   return (
-    <ul className="grid gap-4 sm:grid-cols-2">
+    <ul className="grid gap-x-8 gap-y-6 sm:grid-cols-2">
       {items.map((item) => (
-        <li key={item.label} className="rounded-2xl border border-border p-5">
-          <p className="text-xs font-medium tracking-wide text-accent uppercase">{item.type}</p>
+        <li key={item.label} className="border-t border-border pt-5">
+          <p className="text-meta font-semibold text-accent uppercase">{item.type}</p>
           {item.url ? (
             <a
               href={item.url}

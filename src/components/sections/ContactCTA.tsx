@@ -1,35 +1,58 @@
 import { contact } from "@/content/home";
 import { siteConfig, socialLinks } from "@/content/site";
 import { Container } from "@/components/ui/Container";
-import { LinkButton } from "@/components/ui/LinkButton";
 import { Reveal } from "@/components/ui/Reveal";
 
 export function ContactCTA() {
-  const linkedIn = socialLinks.find((link) => link.label === "LinkedIn");
-
   return (
-    <section id="contact" aria-labelledby="contact-heading" className="scroll-mt-24 py-20 md:py-32">
-      <Container className="text-center">
+    <section id="contact" aria-labelledby="contact-heading" className="scroll-mt-24 border-t border-border py-28 md:py-40">
+      <Container wide>
         <Reveal>
-          <h2 id="contact-heading" className="mx-auto max-w-2xl text-h2 font-semibold text-balance text-ink">
+          <p className="text-meta flex items-center gap-3 font-semibold tracking-[0.14em] text-ink-faint uppercase">
+            <span aria-hidden className="h-px w-8 bg-accent" />
+            {contact.kicker}
+          </p>
+        </Reveal>
+
+        <Reveal delay={80}>
+          <h2 id="contact-heading" className="mt-8 max-w-3xl font-serif text-h1 font-medium text-balance text-ink">
             {contact.headline}
+            <br />
+            <span className="text-accent">{contact.accent}</span>
           </h2>
         </Reveal>
 
-        <Reveal delay={100}>
-          <p className="mx-auto mt-6 max-w-xl leading-relaxed text-ink-soft">{contact.supporting}</p>
+        <Reveal delay={160}>
+          <p className="mt-8 max-w-lg text-lede leading-relaxed text-ink-soft">{contact.supporting}</p>
         </Reveal>
 
-        <Reveal delay={200}>
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-            <LinkButton href={`mailto:${siteConfig.email}`} variant="solid">
-              {contact.primaryCta.label}
-            </LinkButton>
-            {linkedIn ? (
-              <LinkButton href={linkedIn.href} variant="outline" external={!linkedIn.isPlaceholder}>
-                {contact.secondaryCta.label}
-              </LinkButton>
-            ) : null}
+        <Reveal delay={240}>
+          <div className="mt-14 flex flex-col gap-6 border-t border-border pt-10 sm:flex-row sm:flex-wrap sm:gap-12">
+            <a
+              href={`mailto:${siteConfig.email}`}
+              className="group flex flex-col gap-1.5"
+            >
+              <span className="text-meta font-semibold text-ink-faint uppercase">Email</span>
+              <span className="text-lg text-ink transition-colors duration-200 group-hover:text-accent">
+                {siteConfig.email}
+              </span>
+            </a>
+
+            {socialLinks.map((social) => (
+              <a
+                key={social.label}
+                href={social.href}
+                target={social.isPlaceholder ? undefined : "_blank"}
+                rel={social.isPlaceholder ? undefined : "noopener noreferrer"}
+                aria-disabled={social.isPlaceholder}
+                className="group flex flex-col gap-1.5"
+              >
+                <span className="text-meta font-semibold text-ink-faint uppercase">{social.label}</span>
+                <span className="text-lg text-ink transition-colors duration-200 group-hover:text-accent">
+                  View profile ↗
+                </span>
+              </a>
+            ))}
           </div>
         </Reveal>
       </Container>

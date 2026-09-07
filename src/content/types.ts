@@ -17,21 +17,18 @@ export interface Metric {
   isPlaceholder: boolean;
 }
 
-export type WorkLayoutOverride = "featured" | "pair" | "horizontal";
-
 export interface Project {
   slug: string;
   name: string;
   description: string;
   role: string;
+  /** May be the literal placeholder "[YEAR]" until confirmed — never render it as-is. */
   year: string;
   tech: string[];
   category: string;
   image?: string;
   externalUrl?: string;
   hasCaseStudy: boolean;
-  /** Pins this project to a specific grid treatment instead of the default index-based pattern. */
-  layoutOverride?: WorkLayoutOverride;
   isPlaceholder: boolean;
 }
 

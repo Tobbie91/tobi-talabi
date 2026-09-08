@@ -17,7 +17,7 @@ export function CaseStudySection({
   className?: string;
 }) {
   return (
-    <section className={cn("border-t border-border py-16 md:py-20", className)}>
+    <section className={cn("border-t border-ink/10 py-16 md:py-20", className)}>
       <Container wide>
         <Reveal>
           <div className="grid gap-3 md:grid-cols-[10rem_1fr] md:gap-10">
@@ -26,7 +26,7 @@ export function CaseStudySection({
             </p>
             <div>
               {heading ? (
-                <h2 className="font-serif text-h3 font-medium text-balance text-ink">{heading}</h2>
+                <h2 className="font-display text-h3 font-bold text-balance text-ink">{heading}</h2>
               ) : null}
               {children ? <div className={cn(heading && "mt-8")}>{children}</div> : null}
             </div>

@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { cn } from "@/lib/cn";
 
-type Variant = "solid" | "line" | "text";
+type Variant = "solid-onLight" | "solid-onDark" | "line-onLight" | "line-onDark" | "text";
 
 export function LinkButton({
   href,
@@ -20,9 +20,11 @@ export function LinkButton({
   const base = "group inline-flex items-center gap-3 text-sm font-medium transition-colors duration-300";
 
   const variants: Record<Variant, string> = {
-    solid: "bg-ink px-7 py-3.5 text-paper hover:bg-accent",
-    line: "border border-ink/30 px-7 py-3.5 text-ink hover:border-accent hover:text-accent",
-    text: "text-ink hover:text-accent",
+    "solid-onLight": "bg-ink px-7 py-3.5 text-paper hover:bg-primary",
+    "solid-onDark": "bg-paper px-7 py-3.5 text-ink hover:bg-gold",
+    "line-onLight": "border border-ink/30 px-7 py-3.5 text-ink hover:border-primary hover:text-primary",
+    "line-onDark": "border border-paper/40 px-7 py-3.5 text-paper hover:border-paper",
+    text: "text-current",
   };
 
   const content = (

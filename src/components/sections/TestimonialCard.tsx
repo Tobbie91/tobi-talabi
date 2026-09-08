@@ -1,16 +1,22 @@
 import type { Testimonial } from "@/content/types";
 
-export function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
-  return (
-    <figure className="flex h-full flex-col justify-between border-t border-border pt-8">
-      <blockquote className="font-serif text-h3 leading-snug text-balance text-ink">
-        &ldquo;{testimonial.quote}&rdquo;
-      </blockquote>
+const markTone = ["text-primary", "text-gold", "text-jade"];
+const ruleTone = ["border-primary", "border-gold", "border-jade"];
 
-      <figcaption className="mt-10">
-        <p className="text-sm font-semibold text-ink">{testimonial.name}</p>
-        <p className="mt-1 text-sm text-ink-faint">
-          {testimonial.role}, {testimonial.organization}
+export function TestimonialCard({ testimonial, index }: { testimonial: Testimonial; index: number }) {
+  return (
+    <figure className={`flex h-full flex-col border-t-4 pt-8 ${ruleTone[index % ruleTone.length]}`}>
+      <span aria-hidden className={`font-serif text-5xl leading-none italic ${markTone[index % markTone.length]}`}>
+        &ldquo;
+      </span>
+
+      <blockquote className="mt-4 flex-1 leading-relaxed text-paper/85">{testimonial.quote}</blockquote>
+
+      <figcaption className="mt-8 border-t border-paper/15 pt-5">
+        <p className="text-sm font-semibold text-paper">{testimonial.name}</p>
+        <p className="mt-1 text-sm text-paper/60">
+          {testimonial.role}
+          {testimonial.organization ? `, ${testimonial.organization}` : ""}
         </p>
       </figcaption>
     </figure>

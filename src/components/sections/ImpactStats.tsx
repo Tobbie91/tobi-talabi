@@ -1,22 +1,33 @@
 import { metrics } from "@/content/metrics";
 import { Container } from "@/components/ui/Container";
+import { ColorSection } from "@/components/ui/ColorSection";
 import { Reveal } from "@/components/ui/Reveal";
+
+const numeralTone = ["text-primary", "text-secondary", "text-gold", "text-jade", "text-primary", "text-secondary"];
+const numeralSize = [
+  "text-5xl md:text-6xl lg:text-7xl",
+  "text-5xl md:text-6xl lg:text-7xl",
+  "text-5xl md:text-6xl",
+  "text-5xl md:text-6xl",
+  "text-5xl md:text-6xl",
+  "text-5xl md:text-6xl",
+];
 
 export function ImpactStats() {
   return (
-    <section aria-label="Impact" className="border-t border-border bg-paper-alt/50 py-20 md:py-28">
+    <ColorSection tone="ink" aria-label="Impact" className="py-20 md:py-28">
       <Container wide>
-        <div className="grid grid-cols-2 divide-x divide-y divide-border border border-border sm:grid-cols-3 lg:grid-cols-6 lg:divide-y-0">
+        <div className="grid grid-cols-2 gap-x-8 gap-y-12 sm:grid-cols-3 lg:grid-cols-6">
           {metrics.map((metric, index) => (
-            <Reveal key={metric.label} delay={index * 60} className="h-full">
-              <div className="flex h-full flex-col justify-between gap-8 px-6 py-8 md:px-7 md:py-10">
-                <p className="font-serif text-4xl text-ink md:text-5xl">{metric.value}</p>
-                <p className="text-sm leading-snug text-ink-soft">{metric.label}</p>
+            <Reveal key={metric.label} delay={index * 60}>
+              <div>
+                <p className={`font-display font-extrabold ${numeralSize[index]} ${numeralTone[index]}`}>{metric.value}</p>
+                <p className="mt-2 text-sm text-paper/60">{metric.label}</p>
               </div>
             </Reveal>
           ))}
         </div>
       </Container>
-    </section>
+    </ColorSection>
   );
 }

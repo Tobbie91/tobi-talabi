@@ -1,5 +1,6 @@
 import { trainingEvents } from "@/content/training";
 import { Container } from "@/components/ui/Container";
+import { ColorSection } from "@/components/ui/ColorSection";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
 import { TrainingCard } from "./TrainingCard";
@@ -8,14 +9,15 @@ export function Speaking() {
   const [lead, ...rest] = trainingEvents;
 
   return (
-    <section id="speaking" aria-labelledby="speaking-heading" className="scroll-mt-24 border-t border-border py-24 md:py-36">
+    <ColorSection tone="gold" id="speaking" aria-labelledby="speaking-heading" className="scroll-mt-24 py-24 md:py-36">
       <Container wide>
         <Reveal>
           <SectionHeading
             id="speaking"
             kicker="Speaking & Training"
-            title="Sharing what I know with the technology community."
+            title="Community, speaking and knowledge-sharing."
             subtitle="Webinars, workshops and training sessions I've hosted for developers and teams navigating tech."
+            kickerClassName="text-ink/60"
           />
         </Reveal>
 
@@ -28,7 +30,7 @@ export function Speaking() {
         ) : null}
 
         {rest.length > 0 ? (
-          <div className="mt-20 flex flex-col gap-16 border-t border-border pt-16 md:mt-24 md:gap-20 md:pt-20">
+          <div className="mt-20 flex flex-col gap-16 border-t border-ink/10 pt-16 md:mt-24 md:gap-20 md:pt-20">
             {rest.map((event, index) => (
               <Reveal key={event.slug} delay={index * 80}>
                 <TrainingCard event={event} variant="feature" />
@@ -37,6 +39,6 @@ export function Speaking() {
           </div>
         ) : null}
       </Container>
-    </section>
+    </ColorSection>
   );
 }

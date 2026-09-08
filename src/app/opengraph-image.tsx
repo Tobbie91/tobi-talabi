@@ -15,14 +15,14 @@ export default function Image() {
           flexDirection: "column",
           justifyContent: "center",
           padding: "96px",
-          background: "#faf7f1",
+          background: "#e8420a",
         }}
       >
-        <div style={{ width: 56, height: 4, background: "#8a3a18", marginBottom: 40 }} />
-        <div style={{ fontSize: 84, fontWeight: 600, color: "#1b1812", letterSpacing: "-0.02em", fontFamily: "serif" }}>
+        <div style={{ width: 56, height: 4, background: "#f2b705", marginBottom: 40 }} />
+        <div style={{ fontSize: 84, fontWeight: 800, color: "#faf6ec", letterSpacing: "-0.02em", fontFamily: "sans-serif" }}>
           {siteConfig.name}
         </div>
-        <div style={{ marginTop: 24, fontSize: 32, color: "#57534a" }}>{siteConfig.role}</div>
+        <div style={{ marginTop: 24, fontSize: 32, color: "#faf6ec", opacity: 0.85 }}>{siteConfig.role}</div>
       </div>
     ),
     { ...size },

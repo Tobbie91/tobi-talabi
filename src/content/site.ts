@@ -20,4 +20,5 @@ export const primaryNav: NavLink[] = [
 export const socialLinks: SocialLink[] = [
   { label: "LinkedIn", href: "https://www.linkedin.com/in/oluwatobi-akinrimisi-webdeveloper/", isPlaceholder: false },
   { label: "GitHub", href: "https://github.com/Tobbie91", isPlaceholder: false },
+  { label: "WhatsApp", href: "https://wa.me/2348135169538", isPlaceholder: false },
 ];

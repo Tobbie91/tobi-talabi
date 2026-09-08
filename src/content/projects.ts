@@ -20,6 +20,7 @@ export const projects: Project[] = [
     image: "/images/projects/ajoti.png",
     externalUrl: "https://ajoti.com/",
     hasCaseStudy: true,
+    theme: "ajoti",
     isPlaceholder: false,
   },
   {
@@ -33,6 +34,7 @@ export const projects: Project[] = [
     image: "/images/projects/beafrique.jpeg",
     externalUrl: "https://beafrique.netlify.app/",
     hasCaseStudy: true,
+    theme: "beafrique",
     isPlaceholder: false,
   },
   {
@@ -46,6 +48,7 @@ export const projects: Project[] = [
     image: "/images/projects/esemie-hero.png",
     externalUrl: "https://www.esemie.io",
     hasCaseStudy: true,
+    theme: "esemie",
     isPlaceholder: false,
   },
   {
@@ -75,19 +78,6 @@ export const projects: Project[] = [
     isPlaceholder: false,
   },
   {
-    slug: "valuejet",
-    name: "ValueJet",
-    description: "Customer portal with authentication and account flows for an airline.",
-    role: "Frontend Developer",
-    year: "[YEAR]",
-    tech: ["React", "TypeScript"],
-    category: "Aviation",
-    image: "/images/projects/valuejet.png",
-    externalUrl: "https://valuejet-fe-main.vercel.app/signin",
-    hasCaseStudy: false,
-    isPlaceholder: false,
-  },
-  {
     slug: "esemie-business-app",
     name: "Esemie Business App",
     description: "Invoicing, expenses and reporting for small businesses.",
@@ -98,6 +88,19 @@ export const projects: Project[] = [
     image: "/images/projects/esemie-hero.png",
     externalUrl: "https://app.esemie.io/",
     hasCaseStudy: true,
+    isPlaceholder: false,
+  },
+  {
+    slug: "valuejet",
+    name: "ValueJet",
+    description: "Customer portal with authentication and account flows for an airline.",
+    role: "Frontend Developer",
+    year: "[YEAR]",
+    tech: ["React", "TypeScript"],
+    category: "Aviation",
+    image: "/images/projects/valuejet.png",
+    externalUrl: "https://valuejet-fe-main.vercel.app/signin",
+    hasCaseStudy: false,
     isPlaceholder: false,
   },
   {

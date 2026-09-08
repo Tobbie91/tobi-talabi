@@ -16,7 +16,7 @@ export const about = {
   statement: "I build digital products that solve real problems.",
   // Drawn from oluwatobi-akinrimisi.netlify.app's bio — reword freely, this is a starting point.
   paragraph:
-    "I'm a developer who ships — I obsess over DX/UX, performance budgets, and accessible interfaces. My work is frontend-heavy full-stack: delightful UX, performance and clean architecture, from React and TypeScript through to the Node, PostgreSQL and Supabase systems behind them. Alongside building, I spend time teaching — helping other people navigate their own path into tech.",
+    "I’m a developer who ships, obsessed with great DX/UX, performance, and accessible interfaces. I build frontend-heavy full-stack products, combining React and TypeScript with the Node, PostgreSQL, and Supabase systems behind them. And when I’m not building, I’m teaching, helping others find their way into tech.",
   cta: { label: "More about me", href: "#about" },
 };
 

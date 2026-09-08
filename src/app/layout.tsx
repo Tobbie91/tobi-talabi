@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Manrope, Fraunces } from "next/font/google";
+import { Manrope, Fraunces, Bricolage_Grotesque } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { siteConfig } from "@/content/site";
@@ -14,11 +14,21 @@ const manrope = Manrope({
   display: "swap",
 });
 
+const bricolage = Bricolage_Grotesque({
+  variable: "--font-bricolage",
+  subsets: ["latin"],
+  weight: "variable",
+  axes: ["opsz"],
+  display: "swap",
+});
+
+// Demoted to a single sparing italic "editorial moment" — the Philosophy
+// pull-quote and the Contact accent line — everything else uses Bricolage.
 const fraunces = Fraunces({
   variable: "--font-fraunces",
   subsets: ["latin"],
   weight: "variable",
-  style: ["normal", "italic"],
+  style: ["italic"],
   axes: ["opsz", "SOFT"],
   display: "swap",
 });
@@ -51,7 +61,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   const jsonLd = personJsonLd();
 
   return (
-    <html lang="en" className={`${manrope.variable} ${fraunces.variable} h-full`}>
+    <html lang="en" className={`${manrope.variable} ${fraunces.variable} ${bricolage.variable} h-full`}>
       <body className="flex min-h-full flex-col">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         <Header />

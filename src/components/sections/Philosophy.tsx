@@ -6,22 +6,18 @@ import { Reveal } from "@/components/ui/Reveal";
 
 export function Philosophy() {
   return (
-    <ColorSection tone="ink" aria-label="Personal philosophy" className="py-28 md:py-40">
+    <ColorSection tone="paper" aria-label="Personal philosophy" className="py-24 md:py-32">
       <Container className="max-w-4xl text-center">
         <Reveal>
-          <p className="text-meta font-semibold text-paper/45 uppercase">Philosophy</p>
+          <p className="text-meta font-semibold text-ink-soft uppercase">Philosophy</p>
         </Reveal>
 
         <Reveal delay={100}>
-          <blockquote className="mx-auto mt-8 font-serif text-h1 leading-[1.05] text-balance italic">
+          <blockquote className="mx-auto mt-8 font-serif text-h1 leading-[1.05] text-balance text-ink italic">
             &ldquo;
-            <ColorText text={philosophy.pullQuote} highlight={["solve real problems"]} tone="primary" />
+            <ColorText text={philosophy.pullQuote} highlight={["solve real problems"]} />
             &rdquo;
           </blockquote>
-        </Reveal>
-
-        <Reveal delay={200}>
-          <p className="mx-auto mt-10 max-w-2xl text-lede leading-relaxed text-paper/65">{philosophy.body}</p>
         </Reveal>
       </Container>
     </ColorSection>

@@ -5,7 +5,7 @@ import { MobileNav } from "./MobileNav";
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-50 bg-ink text-paper">
+    <header className="sticky top-0 z-50 bg-dark text-paper">
       <Container wide className="flex h-20 items-center justify-between md:h-24">
         <Link href="/" className="font-display text-lg font-semibold tracking-tight">
           {siteConfig.name}
@@ -24,16 +24,16 @@ export function Header() {
         </nav>
 
         <Link
-          href="#contact"
-          className="group hidden items-center gap-2 text-sm font-medium text-gold transition-colors duration-200 hover:text-paper md:inline-flex"
+          href="/#contact"
+          className="group hidden items-center gap-2 text-sm font-medium text-accent transition-colors duration-200 hover:text-paper md:inline-flex"
         >
-          Let&rsquo;s talk
+          Let&rsquo;s work together
           <span aria-hidden className="transition-transform duration-200 group-hover:translate-x-1">
             →
           </span>
         </Link>
 
-        <MobileNav links={primaryNav} ctaHref="#contact" ctaLabel="Let's talk" />
+        <MobileNav links={primaryNav} ctaHref="/#contact" ctaLabel="Let's work together" />
       </Container>
     </header>
   );

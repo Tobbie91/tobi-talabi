@@ -5,32 +5,24 @@
   --font-serif: var(--font-fraunces);
   --font-display: var(--font-bricolage);
 
-  /* Flat, saturated colour as structure: every section commits to one of
-     these as a full-bleed background, not a tint or a gradient. */
-  --color-paper: #faf6ec;
-  --color-paper-alt: #f1e9d8;
-  --color-ink: #14120f;
-  --color-ink-soft: #57534a;
-  --color-ink-faint: #938a79;
+  /* Restrained, intentional palette: warm neutrals do almost all of the
+     work, one orange accent is used sparingly, and a single deep-brown
+     tone is reserved for the one dark section (Contact) plus nav chrome. */
+  --color-paper: #f7f4ef;
+  --color-surface: #ffffff;
+  --color-ink: #171412;
+  --color-ink-soft: #6f6963;
+  --color-border: #e5ded6;
+  --color-dark: #1c1511;
 
-  --color-primary: #e8420a;
-  --color-primary-deep: #b93107;
-  --color-primary-tint: #fcd9c8;
-
-  --color-secondary: #1c33e0;
-  --color-secondary-deep: #12228f;
-
-  --color-gold: #f2b705;
-  --color-jade: #0b7a4a;
-
-  --color-ajoti: #1226c9;
-  --color-beafrique: #c81e6b;
-  --color-esemie: #0b4a4e;
-  --color-esemie-accent: #ff8a5b;
+  --color-accent: #f97316;
+  --color-accent-deep: #c2570e;
 
   /* Type system: Bricolage Grotesque carries the bold display voice,
-     Manrope stays for body/UI, Fraunces italic is demoted to one sparing
-     "editorial moment" (Philosophy pull-quote, Contact accent line). */
+     Manrope stays for body/UI, Fraunces italic is a single sparing
+     "editorial moment" (Philosophy pull-quote, Contact accent line).
+     Typography — size, weight, spacing — carries hierarchy; colour
+     doesn't compensate for it. */
   --text-display: clamp(3.5rem, 1.2rem + 9vw, 9.5rem);
   --text-display--line-height: 0.92;
   --text-display--letter-spacing: -0.02em;
@@ -76,12 +68,12 @@
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-primary);
+    outline: 2px solid var(--color-accent);
     outline-offset: 3px;
   }
 
   ::selection {
-    background: var(--color-primary);
+    background: var(--color-accent);
     color: var(--color-paper);
   }
 }

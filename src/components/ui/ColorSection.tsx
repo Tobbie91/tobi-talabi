@@ -1,19 +1,14 @@
 import type { ComponentPropsWithoutRef } from "react";
 import { cn } from "@/lib/cn";
 
-export type Tone = "primary" | "secondary" | "ink" | "paper" | "gold" | "jade" | "ajoti" | "beafrique" | "esemie";
+export type Tone = "paper" | "surface" | "dark";
 
-/** Centralised bg/text pairing per tone — every section picks one instead of hand-rolling bg-x text-y. */
+/** Centralised bg/text pairing per tone. Paper is the default; surface (white) is used
+ * occasionally for lift; dark is reserved for the one high-contrast section (Contact). */
 const toneClasses: Record<Tone, string> = {
-  primary: "bg-primary text-paper",
-  secondary: "bg-secondary text-paper",
-  ink: "bg-ink text-paper",
   paper: "bg-paper text-ink",
-  gold: "bg-gold text-ink",
-  jade: "bg-jade text-paper",
-  ajoti: "bg-ajoti text-paper",
-  beafrique: "bg-beafrique text-paper",
-  esemie: "bg-esemie text-paper",
+  surface: "bg-surface text-ink",
+  dark: "bg-dark text-paper",
 };
 
 export function ColorSection({

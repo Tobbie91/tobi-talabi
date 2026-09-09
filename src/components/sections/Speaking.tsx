@@ -9,7 +9,7 @@ export function Speaking() {
   const [lead, ...rest] = trainingEvents;
 
   return (
-    <ColorSection tone="gold" id="speaking" aria-labelledby="speaking-heading" className="scroll-mt-24 py-24 md:py-36">
+    <ColorSection tone="paper" id="speaking" aria-labelledby="speaking-heading" className="scroll-mt-24 py-20 md:py-28">
       <Container wide>
         <Reveal>
           <SectionHeading
@@ -17,12 +17,12 @@ export function Speaking() {
             kicker="Speaking & Training"
             title="Community, speaking and knowledge-sharing."
             subtitle="Webinars, workshops and training sessions I've hosted for developers and teams navigating tech."
-            kickerClassName="text-ink/60"
+            kickerClassName="text-ink-soft"
           />
         </Reveal>
 
         {lead ? (
-          <div className="mt-20 md:mt-28">
+          <div className="mt-16 md:mt-20">
             <Reveal>
               <TrainingCard event={lead} variant="showcase" />
             </Reveal>
@@ -30,7 +30,7 @@ export function Speaking() {
         ) : null}
 
         {rest.length > 0 ? (
-          <div className="mt-20 flex flex-col gap-16 border-t border-ink/10 pt-16 md:mt-24 md:gap-20 md:pt-20">
+          <div className="mt-16 flex flex-col gap-16 border-t border-ink/10 pt-16 md:mt-20 md:gap-20 md:pt-20">
             {rest.map((event, index) => (
               <Reveal key={event.slug} delay={index * 80}>
                 <TrainingCard event={event} variant="feature" />

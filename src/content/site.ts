@@ -10,11 +10,13 @@ export const siteConfig = {
   tagline: "Built with curiosity & code.",
 };
 
+// Absolute hash paths (not bare "#work") so these still resolve correctly
+// from other routes, e.g. /work or a project case study page.
 export const primaryNav: NavLink[] = [
-  { label: "Work", href: "#work" },
-  { label: "About", href: "#about" },
-  { label: "Speaking", href: "#speaking" },
-  { label: "Contact", href: "#contact" },
+  { label: "Work", href: "/#work" },
+  { label: "About", href: "/#about" },
+  { label: "Speaking", href: "/#speaking" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export const socialLinks: SocialLink[] = [

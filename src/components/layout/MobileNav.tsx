@@ -32,7 +32,7 @@ export function MobileNav({ links, ctaHref, ctaLabel }: { links: NavLink[]; ctaH
   const panel =
     open
       ? createPortal(
-          <div id="mobile-nav-panel" className="fixed inset-0 z-40 flex flex-col justify-center bg-ink px-8 text-paper">
+          <div id="mobile-nav-panel" className="fixed inset-0 z-40 flex flex-col justify-center bg-dark px-8 text-paper">
             <nav aria-label="Mobile" className="flex flex-col gap-2 border-t border-paper/15">
               {links.map((link, index) => (
                 <Link
@@ -41,7 +41,7 @@ export function MobileNav({ links, ctaHref, ctaLabel }: { links: NavLink[]; ctaH
                   onClick={() => setOpen(false)}
                   className="flex items-baseline gap-4 border-b border-paper/15 py-4 font-display text-3xl font-semibold"
                 >
-                  <span className="text-meta font-sans text-gold">0{index + 1}</span>
+                  <span className="text-meta font-sans text-accent">0{index + 1}</span>
                   {link.label}
                 </Link>
               ))}

@@ -17,11 +17,11 @@ export function CaseStudySection({
   className?: string;
 }) {
   return (
-    <section className={cn("border-t border-ink/10 py-16 md:py-20", className)}>
+    <section className={cn("border-t border-border py-16 md:py-20", className)}>
       <Container wide>
         <Reveal>
           <div className="grid gap-3 md:grid-cols-[10rem_1fr] md:gap-10">
-            <p className="text-meta font-semibold text-ink-faint uppercase">
+            <p className="text-meta font-semibold text-ink-soft uppercase">
               {number} — {kicker}
             </p>
             <div>

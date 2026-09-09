@@ -3,9 +3,9 @@ import { siteConfig } from "@/content/site";
 
 /**
  * No background-removed asset exists for the headshot, so the "cutout" feel
- * is simulated: an organic clip-path instead of a rectangle, plus a duotone
- * multiply overlay that ties the photo's tonality into the flat colour
- * system, rather than it reading as a neutral photo dropped on a colour field.
+ * comes from composition alone: an organic clip-path instead of a rectangle.
+ * The photo stays true to colour — the portfolio's restraint is about the UI
+ * around it, not about muting the one real photograph on the page.
  */
 export function HeroPhoto() {
   return (
@@ -18,20 +18,18 @@ export function HeroPhoto() {
         </defs>
       </svg>
 
-      <div className="relative aspect-4/5 overflow-hidden bg-ink" style={{ clipPath: "url(#hero-portrait-clip)" }}>
+      <div className="relative aspect-4/5 overflow-hidden bg-border" style={{ clipPath: "url(#hero-portrait-clip)" }}>
         <Image
           src="/images/hero/headshot.jpeg"
           alt={siteConfig.name}
           fill
           sizes="(min-width: 1024px) 640px, 90vw"
-          className="object-cover grayscale contrast-110"
+          className="object-cover"
           priority
         />
-        <div aria-hidden className="absolute inset-0 mix-blend-multiply bg-primary-deep/45" />
       </div>
 
-      <span aria-hidden className="absolute -top-5 -left-5 hidden h-9 w-9 rounded-full bg-gold lg:block" />
-      <span aria-hidden className="absolute right-4 -bottom-4 hidden h-7 w-7 rotate-12 bg-secondary lg:block" />
+      <span aria-hidden className="absolute -top-5 -left-5 hidden h-9 w-9 rounded-full bg-accent lg:block" />
     </div>
   );
 }

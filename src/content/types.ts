@@ -17,8 +17,6 @@ export interface Metric {
   isPlaceholder: boolean;
 }
 
-export type ProjectTheme = "ajoti" | "beafrique" | "esemie";
-
 export interface Project {
   slug: string;
   name: string;
@@ -31,8 +29,6 @@ export interface Project {
   image?: string;
   externalUrl?: string;
   hasCaseStudy: boolean;
-  /** Bespoke full-bleed colour treatment for the showcase/featured tier — see lib/project-themes.ts. */
-  theme?: ProjectTheme;
   isPlaceholder: boolean;
 }
 

@@ -60,17 +60,17 @@ export default async function ProjectPage({ params }: PageProps<"/work/[slug]">)
           Back to work
         </Link>
 
-        <p className="mt-8 text-sm text-ink-faint">{metaParts.join(" · ")}</p>
+        <p className="mt-8 text-sm text-ink-soft/70">{metaParts.join(" · ")}</p>
 
         <h1 className="mt-4 font-display text-h1 font-extrabold text-balance text-ink">{project.name}</h1>
         <p className="mt-6 max-w-xl leading-relaxed text-ink-soft">{project.description}</p>
 
-        <div className="mt-16 border-t border-dashed border-ink/20 pt-8">
-          <p className="text-ink-faint">Full case study — coming soon.</p>
+        <div className="mt-16 border-t border-dashed border-border pt-8">
+          <p className="text-ink-soft">Full case study — coming soon.</p>
         </div>
 
         <div className="mt-10">
-          <LinkButton href="/#work" variant="line-onLight">
+          <LinkButton href="/#work" variant="outline">
             Back to work
           </LinkButton>
         </div>

@@ -58,7 +58,7 @@ export function TrainingCard({ event, variant }: { event: TrainingEvent; variant
             <h3 className="mt-3 font-display text-h2 font-extrabold text-balance text-ink">{event.title}</h3>
           </div>
           <div>
-            <p className="text-sm font-semibold tracking-wide text-primary uppercase">{event.topic}</p>
+            <p className="text-sm font-semibold tracking-wide text-accent uppercase">{event.topic}</p>
             <p className="mt-4 leading-relaxed opacity-85">{event.description}</p>
             <EventTags event={event} />
           </div>
@@ -73,7 +73,7 @@ export function TrainingCard({ event, variant }: { event: TrainingEvent; variant
       <div>
         <EventMeta event={event} />
         <h3 className="mt-3 font-display text-h3 font-bold text-balance text-ink">{event.title}</h3>
-        <p className="mt-2 text-sm font-semibold tracking-wide text-primary uppercase">{event.topic}</p>
+        <p className="mt-2 text-sm font-semibold tracking-wide text-accent uppercase">{event.topic}</p>
         <p className="mt-4 leading-relaxed opacity-85">{event.description}</p>
         <EventTags event={event} />
       </div>

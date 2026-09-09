@@ -1,30 +1,21 @@
 import { cn } from "@/lib/cn";
 
-type Tone = "primary" | "secondary" | "gold" | "jade" | "paper" | "ink";
-
-const toneClass: Record<Tone, string> = {
-  primary: "text-primary",
-  secondary: "text-secondary",
-  gold: "text-gold",
-  jade: "text-jade",
-  paper: "text-paper",
-  ink: "text-ink",
-};
-
 function escapeRegExp(value: string) {
   return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
-/** Wraps each occurrence of a phrase in `highlight` with a coloured span — the two-tone headline device. */
+/**
+ * Wraps each occurrence of a phrase in `highlight` in the single accent colour.
+ * There is only one accent in this system, so this is deliberately not
+ * parametrised by tone — use it sparingly, for one phrase per section at most.
+ */
 export function ColorText({
   text,
   highlight,
-  tone = "primary",
   className,
 }: {
   text: string;
   highlight: string[];
-  tone?: Tone;
   className?: string;
 }) {
   if (highlight.length === 0) return text;
@@ -34,7 +25,7 @@ export function ColorText({
 
   return parts.map((part, index) =>
     highlight.includes(part) ? (
-      <span key={index} className={cn(toneClass[tone], className)}>
+      <span key={index} className={cn("text-accent", className)}>
         {part}
       </span>
     ) : (

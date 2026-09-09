@@ -9,14 +9,14 @@ export function Testimonials() {
   const published = testimonials.filter((testimonial) => !testimonial.isPlaceholder);
 
   return (
-    <ColorSection tone="secondary" id="testimonials" aria-labelledby="testimonials-heading" className="scroll-mt-24 py-24 md:py-36">
+    <ColorSection tone="surface" id="testimonials" aria-labelledby="testimonials-heading" className="scroll-mt-24 py-24 md:py-36">
       <Container wide>
         <Reveal>
           <SectionHeading
             id="testimonials"
             kicker="Testimonials"
             title="What people say about working with me"
-            kickerClassName="text-paper/60"
+            kickerClassName="text-ink-soft"
           />
         </Reveal>
 
@@ -24,13 +24,13 @@ export function Testimonials() {
           <div className="mt-16 grid gap-12 md:grid-cols-3 md:gap-10">
             {published.map((testimonial, index) => (
               <Reveal key={testimonial.name + index} delay={index * 80}>
-                <TestimonialCard testimonial={testimonial} index={index} />
+                <TestimonialCard testimonial={testimonial} />
               </Reveal>
             ))}
           </div>
         ) : (
           <Reveal delay={100}>
-            <p className="mt-12 max-w-md border-t border-dashed border-paper/20 pt-8 text-sm text-paper/60">
+            <p className="mt-12 max-w-md border-t border-dashed border-border pt-8 text-sm text-ink-soft">
               Testimonials from collaborators and clients — coming soon.
             </p>
           </Reveal>

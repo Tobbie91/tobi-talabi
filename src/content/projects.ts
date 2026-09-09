@@ -20,7 +20,6 @@ export const projects: Project[] = [
     image: "/images/projects/ajoti.png",
     externalUrl: "https://ajoti.com/",
     hasCaseStudy: true,
-    theme: "ajoti",
     isPlaceholder: false,
   },
   {
@@ -34,7 +33,6 @@ export const projects: Project[] = [
     image: "/images/projects/beafrique.jpeg",
     externalUrl: "https://beafrique.netlify.app/",
     hasCaseStudy: true,
-    theme: "beafrique",
     isPlaceholder: false,
   },
   {
@@ -48,7 +46,6 @@ export const projects: Project[] = [
     image: "/images/projects/esemie-hero.png",
     externalUrl: "https://www.esemie.io",
     hasCaseStudy: true,
-    theme: "esemie",
     isPlaceholder: false,
   },
   {

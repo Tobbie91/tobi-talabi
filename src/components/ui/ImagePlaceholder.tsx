@@ -14,12 +14,12 @@ export function ImagePlaceholder({
       role="img"
       aria-label={label}
       className={cn(
-        "flex items-center justify-center border border-dashed border-current/30 bg-current/5 px-6 text-center",
+        "flex items-center justify-center border border-dashed border-border bg-paper px-6 text-center",
         aspect,
         className,
       )}
     >
-      <span className="text-sm opacity-70">{label}</span>
+      <span className="text-sm text-ink-soft">{label}</span>
     </div>
   );
 }

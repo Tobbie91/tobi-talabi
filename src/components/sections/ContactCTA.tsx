@@ -11,13 +11,13 @@ function socialActionLabel(label: string) {
 
 export function ContactCTA() {
   return (
-    <ColorSection tone="ink" id="contact" aria-labelledby="contact-heading" className="scroll-mt-24 py-28 md:py-40">
+    <ColorSection tone="dark" id="contact" aria-labelledby="contact-heading" className="scroll-mt-24 py-28 md:py-40">
       <Container wide className="text-center">
         <Reveal>
           <p className="flex items-center justify-center gap-3 text-meta font-semibold text-paper/50 uppercase">
-            <span aria-hidden className="h-px w-8 bg-primary" />
+            <span aria-hidden className="h-px w-8 bg-accent" />
             {contact.kicker}
-            <span aria-hidden className="h-px w-8 bg-primary" />
+            <span aria-hidden className="h-px w-8 bg-accent" />
           </p>
         </Reveal>
 
@@ -25,7 +25,7 @@ export function ContactCTA() {
           <h2 id="contact-heading" className="mx-auto mt-8 max-w-3xl font-display text-h1 font-extrabold text-balance">
             {contact.headline}
             <br />
-            <span className="font-serif text-primary italic">{contact.accent}</span>
+            <span className="font-serif text-accent italic">{contact.accent}</span>
           </h2>
         </Reveal>
 
@@ -37,7 +37,7 @@ export function ContactCTA() {
           <div className="mx-auto mt-14 flex max-w-3xl flex-col items-center gap-8 border-t border-paper/15 pt-10 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-12">
             <a href={`mailto:${siteConfig.email}`} className="group flex flex-col items-center gap-1.5">
               <span className="text-meta font-semibold text-paper/50 uppercase">Email</span>
-              <span className="text-lg transition-colors duration-200 group-hover:text-primary">{siteConfig.email}</span>
+              <span className="text-lg transition-colors duration-200 group-hover:text-accent">{siteConfig.email}</span>
             </a>
 
             {socialLinks.map((social) => (
@@ -50,7 +50,7 @@ export function ContactCTA() {
                 className="group flex flex-col items-center gap-1.5"
               >
                 <span className="text-meta font-semibold text-paper/50 uppercase">{social.label}</span>
-                <span className="text-lg transition-colors duration-200 group-hover:text-primary">
+                <span className="text-lg transition-colors duration-200 group-hover:text-accent">
                   {socialActionLabel(social.label)}
                 </span>
               </a>

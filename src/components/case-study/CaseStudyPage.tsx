@@ -36,7 +36,7 @@ export function CaseStudyPage({ project, caseStudy }: { project: Project; caseSt
         <CaseStudySection number="05" kicker="The Product" heading="A member journey">
           <FlowSteps steps={caseStudy.product.journey.steps} />
           {caseStudy.product.image ? (
-            <div className="relative mt-8 aspect-16/9 max-w-4xl overflow-hidden border border-ink/10">
+            <div className="relative mt-8 aspect-16/9 max-w-4xl overflow-hidden border border-border">
               <Image
                 src={caseStudy.product.image}
                 alt={`${project.name} product screenshot`}
@@ -78,9 +78,9 @@ export function CaseStudyPage({ project, caseStudy }: { project: Project; caseSt
         <EvidenceGrid items={caseStudy.evidence} />
       </CaseStudySection>
 
-      <section className="border-t border-ink/10 py-16 md:py-20">
+      <section className="border-t border-border py-16 md:py-20">
         <Container wide>
-          <LinkButton href="/#work" variant="line-onLight">
+          <LinkButton href="/#work" variant="outline">
             Back to work
           </LinkButton>
         </Container>

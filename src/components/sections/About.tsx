@@ -11,16 +11,16 @@ export function About() {
     <ColorSection tone="paper" id="about" aria-labelledby="about-heading" className="scroll-mt-24 py-24 md:py-36">
       <Container wide className="text-center">
         <Reveal>
-          <p className="flex items-center justify-center gap-3 text-meta font-semibold text-ink-faint uppercase">
-            <span aria-hidden className="h-px w-8 bg-primary" />
+          <p className="flex items-center justify-center gap-3 text-meta font-semibold text-ink-soft uppercase">
+            <span aria-hidden className="h-px w-8 bg-accent" />
             {about.kicker}
-            <span aria-hidden className="h-px w-8 bg-primary" />
+            <span aria-hidden className="h-px w-8 bg-accent" />
           </p>
         </Reveal>
 
         <Reveal delay={80}>
           <h2 id="about-heading" className="mx-auto mt-8 max-w-4xl font-display text-h1 font-extrabold text-balance text-ink">
-            <ColorText text={about.statement} highlight={["real problems"]} tone="primary" />
+            <ColorText text={about.statement} highlight={["real problems"]} />
           </h2>
         </Reveal>
 
@@ -30,7 +30,7 @@ export function About() {
 
         <Reveal delay={220}>
           <div className="mt-10 flex justify-center">
-            <LinkButton href={about.cta.href} variant="line-onLight">
+            <LinkButton href={about.cta.href} variant="outline">
               {about.cta.label}
             </LinkButton>
           </div>

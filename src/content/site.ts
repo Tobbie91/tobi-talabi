@@ -5,7 +5,7 @@ import type { NavLink, SocialLink } from "./types";
 export const siteConfig = {
   name: "Tobi Talabi",
   fullName: "Oluwatobiloba Akinrimisi Talabi",
-  role: "Frontend Developer · Product Builder · Technology Educator",
+  role: "Software Engineer & Product Builder",
   email: "oluwatobiakinrimisi@gmail.com",
   tagline: "Built with curiosity & code.",
 };

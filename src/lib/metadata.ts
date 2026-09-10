@@ -6,4 +6,4 @@ const FALLBACK_SITE_URL = "https://tobitalabi.com";
 export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? FALLBACK_SITE_URL;
 
 export const siteDescription =
-  "Tobi Talabi is a frontend developer, product builder and technology educator building thoughtful digital products and helping others grow through technology.";
+  "Software engineer and product builder focused on building thoughtful, scalable digital products and experiences.";
